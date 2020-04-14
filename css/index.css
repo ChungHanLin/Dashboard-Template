@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(245, 245, 247);
+    /*font-family: ‘cwTeXFangSong’, serif;*/
+}
+
+#connected_client_div {
+    margin-top: 10vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.hr-dashboard {
+    height: 2px;
+    background-color: #2c3e50;
+    margin-top: -8px;
+}
+
+.hr-title {
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), #7f8fa6, rgba(0,0,0,0));
+    margin-top: -15px;
+}
+
+.scrollmenu .scrollcard{
+    display: inline-block;
+    width: 400px;
+    margin: 1em;
+}
+
+.scrollmenu {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin: 1em;
+}
+
+.total-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-scrollbar {
+    position: relative;
+    height: 410px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}

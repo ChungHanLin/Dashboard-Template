@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+        
+        <title>Dashboard</title>
+        
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/mdb.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="css/fontawesome.css" />
+        <link rel="stylesheet" href="css/brands.css" />
+        <link rel="stylesheet" href="css/solid.css">
+    </head>
+
+    <body>
+        <!-- 顯示在線使用者 -->
+        <div id="connected_client_div">
+            <p class="h1" style="font-weight: bold; color: #2c3e50">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </p>
+            <hr class="hr-dashboard" />
+            
+            <div class="my-5"></div>
+            <div class="Total">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="media white z-depth-1 rounded">
+                            <i class="fas fa-check fa-2x z-depth-1 text-white mr-3 total-icon" style="display: flex; background-color: #00b894"></i>
+                            <div class="media-body my-3">
+                                <p class="text-uppercase text-muted mb-1 h6-responsive" style="font-weight: bold">成功 url</p>
+                                <p id="success_url" class="font-weight-bold mb-0 h3-responsive">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="media white z-depth-1 rounded">
+                            <i class="fas fa-times fa-2x z-depth-1 text-white mr-3 total-icon" style="display: flex; background-color: #e74c3c"></i>
+                            <div class="media-body my-3">
+                                <p class="text-uppercase text-muted mb-1 h6-responsive" style="font-weight: bold">失敗 url</p>
+                                <p id="fail_url" class="font-weight-bold mb-0 h3-responsive">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="media white z-depth-1 rounded">
+                            <i class="fas fa-folder-open fa-2x z-depth-1 text-white mr-3 total-icon" style="display: flex; background-color: #3498db"></i>
+                            <div class="media-body my-3">
+                                <p class="text-uppercase text-muted mb-1 h6-responsive" style="font-weight: bold">搜集 url</p>
+                                <p id="collect_url" class="font-weight-bold mb-0 h3-responsive">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+
+                        <div class="media white z-depth-1 rounded">
+                            <i class="fas fa-user fa-2x z-depth-1 text-white mr-3 total-icon" style="display: flex; background-color: #34495e"></i>
+                            <div class="media-body my-3">
+                                <p class="text-uppercase text-muted mb-1 h6-responsive" style="font-weight: bold">用戶量</p>
+                                <p id="client_num" class="font-weight-bold mb-0 h3-responsive">0</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>     
+            
+            <div class="my-5"></div>
+            <p class="h6-responsive" style="font-weight: bold; color: #7f8fa6"><i class="fas fa-desktop"></i> 爬蟲貢獻者</p>
+            <hr class="hr-title" />
+            
+            <div id="account_info" class="scrollmenu"></div>
+            
+            
+            <div class="my-5"></div>
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <p class="h6-responsive" style="font-weight: bold; color: #7f8fa6"><i class="fas fa-book-open"></i> 檢視日誌</p>
+                    <hr class="hr-title" />
+                    
+                    <div class="card m-4 p-4" style="font-family:monospace; background-color: rgb(48, 48, 48); color: rgb(150, 150, 150)">
+                        <p class="h3-responsive" style="font-weight: bold">
+                            1. <span style="color: rgb(254, 252, 255)">Account: 
+                            <span id="log_account"></span></span></p>
+                        <p class="h3-responsive" style="font-weight: bold">2. <span style="color: rgb(167, 235, 221)">Begin time: 
+                            <span id="log_begin_time"></span></span></p>
+                        <p class="h3-responsive" style="font-weight: bold">3. <span style="color: rgb(167, 235, 221)">Finish time: 
+                            <span id="log_finish_time"></span></span></p>
+                        <p class="h3-responsive" style="font-weight: bold">4. <span style="color: rgb(186, 242, 143)">Total success count: 
+                            <span id="log_total_success_count"></span></span></p>
+                        <p class="h3-responsive" style="font-weight: bold">5. <span style="color: rgb(186, 242, 143)">Recent success count: 
+                            <span id="log_recent_success_count"></span></span></p>
+                        <p class="h3-responsive" style="font-weight: bold">6. <span style="color: rgb(255, 122, 178)">Total fail count: 
+                            <span id="log_total_fail_count"></span></span></p>
+                        <p class="h3-responsive" style="font-weight: bold">7. <span style="color: rgb(255, 122, 178)">Recent fail count: 
+                            <span id="log_recent_fail_count"></span></span></p>
+                        <p class="h3-responsive" style="font-weight: bold">8. <span style="color: rgb(170, 160, 250)">Collected link count: 
+                            <span id="log_collect_count"></span></span></p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-12">
+                    <p class="h6-responsive" style="font-weight: bold; color: #7f8fa6"><i class="fas fa-chart-bar"></i> IP 分析 <button id="ip_analysis" class="badge badge-pill badge-info waves-effect" style="margin-left: 10px">執行</button>
+                    </p>
+                    <hr class="hr-title" />
+                    
+                    <div class="card m-4 p-4" style="height: 440px">
+                        <div class="table-wrapper-scroll-y custom-scrollbar">
+
+                            <table class="table table-bordered table-striped mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">IP</th>
+                                        <th scope="col">成功數</th>
+                                        <th scope="col">失敗數</th>
+                                        <th scope="col">失敗率</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ip_table"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+  
+    </body>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/mdb.js"></script>
+    <script src="js/index.js"></script>
+</html>
